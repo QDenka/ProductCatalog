@@ -16,6 +16,7 @@ class CreateFeaturesConnectTable extends Migration
         Schema::create('features_connect', function (Blueprint $table) {
             $table->bigInteger('feature_id')->index()->unsigned();
             $table->bigInteger('product_id')->index()->unsigned();
+            $table->string('value');
             $table->foreign('feature_id')->references('id')->on('features')->onDelete('CASCADE');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('CASCADE');
         });

@@ -16,7 +16,7 @@ class CreateCategoryConnectTable extends Migration
         Schema::create('category_connect', function (Blueprint $table) {
             $table->bigInteger('category_id')->index()->unsigned()->references('id')->on('categories')->onDelete('CASCADE');
             $table->bigInteger('product_id')->index()->unsigned()->references('id')->on('products')->onDelete('CASCADE');
-            $table->tinyInteger('priority'); // Tree priority, 1....n, n is better
+            
             $table->foreign('product_id')->references('id')->on('products')->onDelete('CASCADE');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('CASCADE');
         });

@@ -16,7 +16,8 @@ class CreateCartTable extends Migration
         Schema::create('cart', function (Blueprint $table) {
             $table->id();
             $table->string('identifier', 255); // User identifier
-            $table->json('content'); // Card content
+            $table->json('content')->nullable(); // Cart content
+            $table->boolean('purchased')->default(0); // 1 - purchased, 0 - not
             $table->timestamps();
         });
     }

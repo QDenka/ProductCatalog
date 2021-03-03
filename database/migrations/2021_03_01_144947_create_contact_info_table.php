@@ -15,7 +15,8 @@ class CreateContactInfoTable extends Migration
     {
         Schema::create('contact_info', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id')->index()->unsigned()->references('id')->on('users')->onDelete('CASCADE');
+            $table->bigInteger('user_id')->index()->unsigned();
+            $table->string('email')->nullable();
             $table->string('firstname', 100);
             $table->string('lastname', 100);
             $table->string('middlename', 100);
