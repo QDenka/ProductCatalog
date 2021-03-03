@@ -580,3 +580,22 @@ ____
         ]
     }
 }</span></pre></div>
+
+### Обработка ошибок
+
+<b>Ответ при ошибке: </b>
+<div class="highlight highlight-source-httpspec"><pre><span class="pl-k">{
+    "status": "error",
+    "message": "Product not found",
+    "data": null
+}</span></pre></div>
+
+<b>Ответ при ошибке валидации: </b>
+<div class="highlight highlight-source-httpspec"><pre><span class="pl-k">{
+    "message": "The given data was invalid.",
+    "errors": {
+        "product_id": [
+            "The selected product id is invalid."
+        ]
+    }
+}</span></pre></div>
